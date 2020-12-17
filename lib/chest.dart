@@ -70,7 +70,8 @@ class _ChestState extends State<Chest> {
                 ),
             );
             },
-          )),
+          )
+          ),
     );
   }
 }

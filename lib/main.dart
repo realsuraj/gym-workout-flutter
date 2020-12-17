@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:use_workout_app_for_gym_by_suraj_tiwari/StatisticOfExercise.dart';
+import 'package:use_workout_app_for_gym_by_suraj_tiwari/WarmUpExercise.dart';
 import 'package:use_workout_app_for_gym_by_suraj_tiwari/back.dart';
 import 'package:use_workout_app_for_gym_by_suraj_tiwari/bicep.dart';
 import 'package:use_workout_app_for_gym_by_suraj_tiwari/chest.dart';
@@ -35,7 +37,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             // first row 
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 60, 0, 20),
+              padding: EdgeInsets.fromLTRB(0, 30, 0, 20),
 
              child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -44,17 +46,19 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () async {
-                        var navigationResult = await Navigator.push(
+                        var navigationResult = await Navigator.push
+                        (
                             context,
                             new MaterialPageRoute(
-                                builder: (context) => back()));
+                                builder: (context) => WarmUpExercise())
+                        );
                        
                       },
                       child: Image(
-                        image: AssetImage('assets/images/back.png'),
+                        image: AssetImage('assets/images/chest.png'),
                       ),
                     ),
-                    Text('BACK'),
+                    Text('Warm-Up Exercise'),
                   ],
                 ),
                 Column(
@@ -167,8 +171,53 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             )
+           ),
+        //fouth row
+
+           Padding(
+             padding: EdgeInsets.fromLTRB(0, 20, 0, 20),
+             child:  Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                   InkWell(
+                      onTap: () async {
+                        var navigationResult = await Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => back()));
+                       
+                      },
+                      child: Image(
+                        image: AssetImage('assets/images/back.png'),
+                      ),
+                    ),
+                    Text('back')
+                  ],
+                ),
+                Column(
+                  children: [
+                    InkWell(
+                      onTap: () async {
+                        var navigationResult = await Navigator.push(
+                            context,
+                            new MaterialPageRoute(
+                                builder: (context) => StatisticOfExercise()));
+                       
+                      },
+                      child: Image(
+                        image: AssetImage('assets/images/chest.png'),
+                      ),
+                    ),
+                    Text('Analytic')
+                  ],
+                ),
+              ],
+            )
            )
           ],
-        ));
+        )
+        );
   }
 }
