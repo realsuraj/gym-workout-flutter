@@ -7,17 +7,24 @@ import 'package:use_workout_app_for_gym_by_suraj_tiwari/chest.dart';
 import 'package:use_workout_app_for_gym_by_suraj_tiwari/leg.dart';
 import 'package:use_workout_app_for_gym_by_suraj_tiwari/shoulder.dart';
 import 'package:use_workout_app_for_gym_by_suraj_tiwari/tricep.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
+      
     );
   }
 }
@@ -43,41 +50,73 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  
                   children: [
-                    InkWell(
+                    Material(
+                      
+                      color: Colors.white,
+                      elevation: 8,
+                      borderRadius: BorderRadius.circular(10),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child:  InkWell(
+                      splashColor: Colors.black,
                       onTap: () async {
-                        var navigationResult = await Navigator.push
-                        (
+                        var navigationResult = await Navigator.push(
                             context,
                             new MaterialPageRoute(
-                                builder: (context) => WarmUpExercise())
-                        );
-                       
+                                builder: (context) => WarmUpExercise()));
                       },
-                      child: Image(
-                        image: AssetImage('assets/images/chest.png'),
+                      child: Column(
+                        children: [
+                        SizedBox(height: 40, width: 150,),
+
+                          Ink.image(
+                        image: AssetImage('assets/images/warm-up.png'),
+                        height:80,
+                        width: 100,
                       ),
+                      SizedBox(height: 10,),
+                        Text('Warm Up',
+                        style: TextStyle(color: Colors.black)),
+                        SizedBox(height: 40,)
+
+                      ],)
                     ),
-                    Text('Warm-Up Exercise'),
+                    )                   
                   ],
                 ),
                 Column(
 
-                  children: [
-                    InkWell(
+                  children: [  Material(
+                      color: Colors.white,
+                      elevation: 8,
+                      borderRadius: BorderRadius.circular(10),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child:  InkWell(
+                      splashColor: Colors.black,
                       onTap: () async {
                         var navigationResult = await Navigator.push(
                             context,
                             new MaterialPageRoute(
                                 builder: (context) => Chest()));
-                       
                       },
-                      child: Image(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 40, width: 150,),
+                          Ink.image(
                         image: AssetImage('assets/images/chest.png'),
+                        height: 80,
+                        width: 100,
                       ),
+                       SizedBox(height: 10,),
+                        Text('Chest',
+                          style: TextStyle(color: Colors.black)),
+                        SizedBox(height: 40,),
+
+                      ],)
                     ),
-                    Text('CHEST')
-                  ],
+                    )          ],
                 ),
               ],
             ),
@@ -91,37 +130,64 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
-                  children: [
-                    InkWell(
+                  children: [  Material(
+                      color: Colors.white,
+                      elevation: 8,
+                      borderRadius: BorderRadius.circular(10),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child:  InkWell(
+                      splashColor: Colors.black,
                       onTap: () async {
                         var navigationResult = await Navigator.push(
                             context,
                             new MaterialPageRoute(
                                 builder: (context) => Bicep()));
-                       
                       },
-                      child: Image(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 40, width: 150,),
+                          Ink.image(
                         image: AssetImage('assets/images/bicep.png'),
+                        height: 80,
+                        width: 100,
                       ),
+                       SizedBox(height: 10,),
+                        Text('Bicep',  style: TextStyle(color: Colors.black)),
+                        SizedBox(height: 40,)
+
+                      ],)
                     ),
-                    Text('BICEP')
-                  ],
+                    )          ],
                 ),
                 Column(
-                  children: [
-                    InkWell(
+                  children: [  Material(
+                      color: Colors.white,
+                      elevation: 8,
+                      borderRadius: BorderRadius.circular(10),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child:  InkWell(
+                      splashColor: Colors.black,
                       onTap: () async {
                         var navigationResult = await Navigator.push(
                             context,
                             new MaterialPageRoute(
                                 builder: (context) => Tricep()));
-                       
                       },
-                      child: Image(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 40, width: 150,),
+                          Ink.image(
                         image: AssetImage('assets/images/tricep.png'),
+                        height: 80,
+                        width: 100,
                       ),
+                       SizedBox(height: 10,),
+                        Text('tricep',  style: TextStyle(color: Colors.black)),
+                        SizedBox(height: 40,)
+
+                      ],)
                     ),
-                    Text('TRICEP')
+                    )          
                   ],
                 ),
               ],
@@ -136,37 +202,65 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
-                  children: [
-                   InkWell(
+                  children: [  Material(
+                      color: Colors.white,
+                      elevation: 8,
+                      borderRadius: BorderRadius.circular(10),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child:  InkWell(
+                      splashColor: Colors.black,
                       onTap: () async {
                         var navigationResult = await Navigator.push(
                             context,
                             new MaterialPageRoute(
                                 builder: (context) => Shoulder()));
-                       
                       },
-                      child: Image(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 40, width: 150,),
+                          Ink.image(
                         image: AssetImage('assets/images/shoulder.png'),
+                        height: 80,
+                        width: 100,
                       ),
+                       SizedBox(height: 10,),
+                        Text('Shoulder',  style: TextStyle(color: Colors.black)),
+                        SizedBox(height: 40,)
+
+                      ],)
                     ),
-                    Text('SHOULDER')
+                    )          
                   ],
                 ),
                 Column(
-                  children: [
-                    InkWell(
+                  children: [  Material(
+                      color: Colors.white,
+                      elevation: 8,
+                      borderRadius: BorderRadius.circular(10),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child:  InkWell(
+                      splashColor: Colors.black,
                       onTap: () async {
                         var navigationResult = await Navigator.push(
                             context,
                             new MaterialPageRoute(
                                 builder: (context) => Leg()));
-                       
                       },
-                      child: Image(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 40, width: 150,),
+                          Ink.image(
                         image: AssetImage('assets/images/leg.png'),
+                        height: 80,
+                        width: 100,
                       ),
+                       SizedBox(height: 10,),
+                        Text('Leg',  style: TextStyle(color: Colors.black)),
+                        SizedBox(height: 40,)
+
+                      ],)
                     ),
-                    Text('LEG')
+                    )          
                   ],
                 ),
               ],
@@ -180,37 +274,65 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
-                  children: [
-                   InkWell(
+                  children: [  Material(
+                      color: Colors.white,
+                      elevation: 8,
+                      borderRadius: BorderRadius.circular(10),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child:  InkWell(
+                      splashColor: Colors.black,
                       onTap: () async {
                         var navigationResult = await Navigator.push(
                             context,
                             new MaterialPageRoute(
                                 builder: (context) => back()));
-                       
                       },
-                      child: Image(
+                      child: Column(
+                        children: [
+                          SizedBox(height: 40, width: 150,),
+                          Ink.image(
                         image: AssetImage('assets/images/back.png'),
+                        height: 80,
+                        width: 100,
                       ),
+                       SizedBox(height: 10,),
+                        Text('Back',  style: TextStyle(color: Colors.black)),
+                        SizedBox(height: 40,)
+
+                      ],)
                     ),
-                    Text('back')
+                    )          
                   ],
                 ),
                 Column(
-                  children: [
-                    InkWell(
+                  children: [  Material(
+                      color: Colors.white,
+                      elevation: 8,
+                      borderRadius: BorderRadius.circular(10),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child:  InkWell(
+                      splashColor: Colors.black,
                       onTap: () async {
                         var navigationResult = await Navigator.push(
                             context,
                             new MaterialPageRoute(
                                 builder: (context) => StatisticOfExercise()));
-                       
                       },
-                      child: Image(
-                        image: AssetImage('assets/images/chest.png'),
+                      child: Column(
+                        children: [
+                          SizedBox(height: 40, width: 150,),
+                          Ink.image(
+                        image: AssetImage('assets/images/instruction.png'),
+                        height: 80,
+                        width: 100,
                       ),
+                       SizedBox(height: 10,),
+                        Text('Instruction',  style: TextStyle(color: Colors.black)),
+                        SizedBox(height: 40,)
+
+                      ],)
                     ),
-                    Text('Analytic')
+                    )          
                   ],
                 ),
               ],
