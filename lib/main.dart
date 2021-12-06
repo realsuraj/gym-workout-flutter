@@ -1,12 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:use_workout_app_for_gym_by_suraj_tiwari/StatisticOfExercise.dart';
-import 'package:use_workout_app_for_gym_by_suraj_tiwari/WarmUpExercise.dart';
-import 'package:use_workout_app_for_gym_by_suraj_tiwari/back.dart';
-import 'package:use_workout_app_for_gym_by_suraj_tiwari/bicep.dart';
-import 'package:use_workout_app_for_gym_by_suraj_tiwari/chest.dart';
-import 'package:use_workout_app_for_gym_by_suraj_tiwari/leg.dart';
-import 'package:use_workout_app_for_gym_by_suraj_tiwari/shoulder.dart';
-import 'package:use_workout_app_for_gym_by_suraj_tiwari/tricep.dart';
 import 'package:use_workout_app_for_gym_by_suraj_tiwari/HomePage.dart';
 
 void main() {
